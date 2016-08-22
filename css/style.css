@@ -28,7 +28,7 @@ div {
 div.header{
 	width:100%;
 	left: 40%;
-	position: absolute;
+	position: relative;
 }
 
 .football > img{
