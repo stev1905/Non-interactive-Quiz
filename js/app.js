@@ -73,7 +73,7 @@ var Score = [];
 				var Sum1 = Score.reduce(function(a, b){
    				return a + b;
  				}, 0);	
-				$('.question').append('Congratulations for finishing the NFL Quiz!!!');
+				$('.question').append('Congratulations on finishing the NFL Quiz!!!');
 				$('.answer').append('You Got '+Sum1+' Out of 5 Questions Correct!!!');
 				$('.answer').append('<img src="images/footballcartoon.gif" alt="footballcartoon" class="footballcartoon">');
 				$('.next').hide();
