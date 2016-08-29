@@ -12,8 +12,6 @@
 			$('.answer').append('<input id="radio2" type=radio name="radio"><label for="radio2">'+ans[1]+'</label><br>');
 			$('.answer').append('<input id="radio3" type=radio name="radio"><label for="radio3">'+ans[2]+'</label><br>');
 			$('.answer').append('<input id="radio4" type=radio name="radio"><label for="radio4">'+ans[3]+'</label><br>');
-
-			$('.football').append('<img src="images/football.png" alt="football">');
 		}
 }
 	  var Question2 = Object.create(Questionentries);
@@ -43,11 +41,16 @@ var Score = [];
 	$('.question').append('Welcome to the NFL Quiz');
 	$('.answer').append('Press the <b>Start</b> button to begin answering the following questions and test your football knowledge. Goodluck!!');
 	$('.button').click(function(){
+		$('.button').val("Start");
+		Score = [];
 		$('.next').show();
 		$('.question').empty();
 		$('.answer').empty();
- 	Questionentries.displayquestion();
- });
+		$('.football1').remove();
+		i = 0;
+ 		Questionentries.displayquestion();
+		$('.football').append('<img src="images/football.png" alt="football" class="football1">');	
+ 
 		$('.next').click(function(){
 		$("input[type='radio']:checked").each(function() {
 		var correctanswer = AnswerArray[i];
@@ -63,6 +66,7 @@ var Score = [];
    		    }
 			if(i<=3){
 				myArray[i].displayquestion();
+				$('.football').append('<img src="images/football.png" alt="football" class="football1">');
 				 	
 			}
 			else{
@@ -73,10 +77,12 @@ var Score = [];
 				$('.answer').append('You Got '+Sum1+' Out of 5 Questions Correct!!!');
 				$('.answer').append('<img src="images/footballcartoon.gif" alt="footballcartoon" class="footballcartoon">');
 				$('.next').hide();
+				$('.button').val("Restart");
 			}
-			i++;
-		});	
-	});				
+				i++;
+			});	
+		});		 
+	});			
 });
 		
 	
